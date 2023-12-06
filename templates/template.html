@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product type forecast</title>
+    </head>
+    <body>
+        <h2>Enter with products details</h2>
+        <form action="/predict" method="post">
+            Weight (g): <input type="number" name="Weight"><br><br>
+            Package type: 
+            <select name="package_type">
+                <option value="Cardboard Box">Cardboard Box</option>
+                <option value="Bubble Wrap">Bubble Wrap</option>
+            </select><br><br>
+            <input type="submit" value="RUN">
+        </form>
+        <br>
+        {% if prediction %}
+        <h3>The product might be: {{ prediction }}</h3>
+        {% endif %}
+    </body>
+</html>
